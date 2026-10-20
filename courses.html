@@ -1,239 +1,228 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore study programmes and course options with Global Study.">
-  <title>Courses | Global Study</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #17243b;
-      line-height: 1.6;
-      background: #fff;
-    }
-    a { text-decoration: none; color: inherit; }
-    .container { width: min(1100px, 90%); margin: auto; }
-    header { background: #fff; box-shadow: 0 2px 15px #10203a12; }
-    nav {
-      min-height: 76px; display: flex; justify-content: space-between;
-      align-items: center; gap: 18px; flex-wrap: wrap;
-    }
-    .logo { font-size: 24px; font-weight: 800; color: #102b50; }
-    .logo span { color: #c79b45; }
-    .navlinks { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
-    .navlinks a { font-size: 14px; font-weight: 700; }
-    .navlinks a:hover { color: #b48735; }
-    .btn {
-      display: inline-block; padding: 12px 19px; border-radius: 5px;
-      background: #c79b45; color: #102342; font-weight: 700;
-    }
-    .hero {
-      padding: 85px 0; color: white;
-      background: linear-gradient(120deg, #0c2343, #1c4972);
-    }
-    .eyebrow {
-      color: #d9ae59; font-size: 12px; font-weight: 800;
-      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px;
-    }
-    h1 { font-size: clamp(36px, 5vw, 56px); line-height: 1.15; max-width: 760px; }
-    .hero p { max-width: 650px; margin: 20px 0 25px; color: #e1e9f3; }
-    section { padding: 70px 0; }
-    .heading { text-align: center; max-width: 700px; margin: 0 auto 38px; }
-    .heading h2 { font-size: clamp(28px, 4vw, 38px); color: #102b50; margin-bottom: 12px; }
-    .heading p { color: #657187; }
-    .filters { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
-    .filter {
-      border: 1px solid #dce2ea; background: #fff; border-radius: 30px;
-      padding: 10px 17px; cursor: pointer; font-weight: 700; color: #233750;
-    }
-    .filter.active, .filter:hover { background: #102b50; color: #fff; border-color: #102b50; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .card {
-      border: 1px solid #e4e9f0; border-radius: 10px; overflow: hidden;
-      background: #fff; transition: .2s;
-    }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px #102b5014; }
-    .card-top {
-      background: #edf2f8; padding: 25px; min-height: 125px;
-      display: flex; align-items: center; gap: 15px;
-    }
-    .emoji { font-size: 35px; }
-    .category { color: #9a7129; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
-    .card-body { padding: 23px; }
-    .card h3 { color: #102b50; font-size: 20px; margin-bottom: 10px; }
-    .card p { color: #657187; font-size: 14px; margin-bottom: 17px; }
-    .details { border-top: 1px solid #e9edf2; padding-top: 14px; margin-bottom: 18px; font-size: 13px; }
-    .details div { margin: 6px 0; }
-    .card .btn { width: 100%; text-align: center; }
-    .note { background: #f6f8fb; }
-    .note-inner { max-width: 780px; margin: auto; text-align: center; }
-    .note h2 { color: #102b50; font-size: 30px; margin-bottom: 12px; }
-    .note p { color: #657187; margin-bottom: 22px; }
-    .cta { background: #102b50; color: white; text-align: center; }
-    .cta h2 { font-size: clamp(28px, 4vw, 38px); margin-bottom: 12px; }
-    .cta p { color: #d1dbea; margin-bottom: 24px; }
-    footer { background: #091b32; color: #d1dbea; padding: 24px 0; font-size: 13px; }
-    .footer-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
-    .hidden { display: none; }
-    @media(max-width: 800px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media(max-width: 560px) {
-      .grid { grid-template-columns: 1fr; }
-      .hero { padding: 65px 0; }
-      section { padding: 52px 0; }
-      .navlinks { gap: 13px; }
-      .navlinks a { font-size: 12px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses | Global Study</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+header {
+  background: #102b50;
+  color: white;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+header h2 { margin: 0; }
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+}
+
+.hero {
+  text-align: center;
+  padding: 45px 15px 25px;
+}
+
+.hero h1 { color: #102b50; }
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 20px 30px;
+}
+
+.filters button {
+  padding: 11px 16px;
+  border: 1px solid #102b50;
+  border-radius: 6px;
+  background: white;
+  color: #102b50;
+  cursor: pointer;
+}
+
+.filters button.active,
+.filters button:hover {
+  background: #102b50;
+  color: white;
+}
+
+.category {
+  max-width: 1150px;
+  margin: 0 auto 35px;
+  padding: 0 20px;
+}
+
+.category h2 {
+  color: #102b50;
+  border-bottom: 2px solid #dce5f2;
+  padding-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.course {
+  background: white;
+  border: 1px solid #e0e6ef;
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 3px 12px #102b5010;
+}
+
+.course h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.duration {
+  color: #315f9b;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #102b50;
+  color: white;
+}
+
+[hidden] { display: none !important; }
+</style>
 </head>
+
 <body>
-  <header>
-    <nav class="container">
-      <a class="logo" href="index.html">GLOBAL <span>STUDY.</span></a>
-      <div class="navlinks">
-        <a href="index.html">Home</a>
-        <a href="#courses">Courses</a>
-        <a href="#how">How It Works</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="eyebrow">Discover Your Next Step</div>
-        <h1>Find a Course That Moves Your Future Forward.</h1>
-        <p>Explore study areas, compare your options and start planning an education pathway that matches your interests and career ambitions.</p>
-        <a class="btn" href="#courses">Explore Courses ↓</a>
-      </div>
-    </section>
+<header>
+  <h2>Global Study</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+  </nav>
+</header>
 
-    <section id="courses">
-      <div class="container">
-        <div class="heading">
-          <div class="eyebrow">Explore Programmes</div>
-          <h2>Find Your Area of Study</h2>
-          <p>Browse these example study areas. Course availability, duration and entry requirements vary by institution and country.</p>
-        </div>
+<section class="hero">
+  <h1>Explore Our Courses</h1>
+  <p>Professional certification and training programs for your career.</p>
+</section>
 
-        <div class="filters">
-          <button class="filter active" data-filter="all">All Courses</button>
-          <button class="filter" data-filter="business">Business</button>
-          <button class="filter" data-filter="technology">Technology</button>
-          <button class="filter" data-filter="engineering">Engineering</button>
-          <button class="filter" data-filter="health">Health</button>
-        </div>
+<div class="filters">
+  <button class="active" data-filter="all">All Courses</button>
+  <button data-filter="project">Project Management</button>
+  <button data-filter="quality">Quality Management</button>
+  <button data-filter="agile">Agile &amp; Scrum</button>
+  <button data-filter="cloud">Cloud Technology</button>
+  <button data-filter="data">Data Science &amp; BI</button>
+</div>
 
-        <div class="grid">
-          <article class="card" data-category="business">
-            <div class="card-top"><span class="emoji">📊</span><div><div class="category">Business</div><h3>MBA</h3></div></div>
-            <div class="card-body">
-              <p>Explore management, leadership, strategy and business development programmes.</p>
-              <div class="details"><div>◷ Duration: varies by programme</div><div>✓ Eligibility: institution-specific</div></div>
-              <a class="btn" href="#contact">Enquire About MBA</a>
-            </div>
-          </article>
+<main id="course-list">
 
-          <article class="card" data-category="technology">
-            <div class="card-top"><span class="emoji">💻</span><div><div class="category">Technology</div><h3>Computer Science</h3></div></div>
-            <div class="card-body">
-              <p>Discover computing, software development, algorithms and modern technology.</p>
-              <div class="details"><div>◷ Duration: varies by programme</div><div>✓ Eligibility: institution-specific</div></div>
-              <a class="btn" href="#contact">Enquire About IT</a>
-            </div>
-          </article>
+<section class="category" data-category="project">
+<h2>Project Management</h2>
+<div class="grid">
+  <article class="course"><h3>PMP Certification</h3><p class="duration">35 Hours</p></article>
+  <article class="course"><h3>CAPM Certification</h3><p class="duration">23 Hours</p></article>
+  <article class="course"><h3>PgMP Certification</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>PMI-RMP Certification</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>PMI-CPMAI Certification</h3><p class="duration">30 Hours</p></article>
+</div>
+</section>
 
-          <article class="card" data-category="engineering">
-            <div class="card-top"><span class="emoji">⚙️</span><div><div class="category">Engineering</div><h3>Engineering</h3></div></div>
-            <div class="card-body">
-              <p>Explore engineering disciplines, technical problem-solving and applied science.</p>
-              <div class="details"><div>◷ Duration: varies by programme</div><div>✓ Eligibility: institution-specific</div></div>
-              <a class="btn" href="#contact">Enquire About Engineering</a>
-            </div>
-          </article>
+<section class="category" data-category="quality">
+<h2>Quality Management</h2>
+<div class="grid">
+  <article class="course"><h3>Six Sigma Yellow Belt (SSYB)</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>Six Sigma Green Belt (SSGB)</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>Six Sigma Black Belt (SSBB)</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>Lean Six Sigma Yellow Belt (LSSYB)</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>Lean Six Sigma Green Belt (LSSGB)</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>Lean Six Sigma Black Belt (LSSBB)</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>Combo LSSGB + LSSBB</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>Lean Management</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>Minitab Training</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>CTFL Certification</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>CMMI Training</h3><p class="duration">16 Hours</p></article>
+</div>
+</section>
 
-          <article class="card" data-category="business">
-            <div class="card-top"><span class="emoji">📈</span><div><div class="category">Business</div><h3>Project Management</h3></div></div>
-            <div class="card-body">
-              <p>Learn about planning, project delivery, teamwork, budgeting and risk management.</p>
-              <div class="details"><div>◷ Duration: varies by programme</div><div>✓ Eligibility: institution-specific</div></div>
-              <a class="btn" href="#contact">Enquire About Project Management</a>
-            </div>
-          </article>
+<section class="category" data-category="agile">
+<h2>Agile &amp; Scrum</h2>
+<div class="grid">
+  <article class="course"><h3>PMI-ACP Certification</h3><p class="duration">21 Hours</p></article>
+  <article class="course"><h3>Certified ScrumMaster (CSM)</h3><p class="duration">2 Days</p></article>
+  <article class="course"><h3>CSPO Certification</h3><p class="duration">16 Hours</p></article>
+</div>
+</section>
 
-          <article class="card" data-category="technology">
-            <div class="card-top"><span class="emoji">🔐</span><div><div class="category">Technology</div><h3>Cyber Security</h3></div></div>
-            <div class="card-body">
-              <p>Explore digital security, networks, risk assessment and information protection.</p>
-              <div class="details"><div>◷ Duration: varies by programme</div><div>✓ Eligibility: institution-specific</div></div>
-              <a class="btn" href="#contact">Enquire About Cyber Security</a>
-            </div>
-          </article>
+<section class="category" data-category="cloud">
+<h2>Cloud Technology</h2>
+<div class="grid">
+  <article class="course"><h3>AWS Solution Architect</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>AWS Certified Developer</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>Microsoft Azure Certification</h3><p class="duration">24 Hours</p></article>
+  <article class="course"><h3>Google Cloud Certification</h3><p class="duration">24 Hours</p></article>
+  <article class="course"><h3>DevOps Certification</h3><p class="duration">24 Hours</p></article>
+  <article class="course"><h3>Internet of Things (IoT) Course</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>EXIN Cloud Computing</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>SMAC Certification</h3><p class="duration">16 Hours</p></article>
+</div>
+</section>
 
-          <article class="card" data-category="health">
-            <div class="card-top"><span class="emoji">🩺</span><div><div class="category">Health</div><h3>Public Health</h3></div></div>
-            <div class="card-body">
-              <p>Learn about community health, prevention, health policy and population wellbeing.</p>
-              <div class="details"><div>◷ Duration: varies by programme</div><div>✓ Eligibility: institution-specific</div></div>
-              <a class="btn" href="#contact">Enquire About Public Health</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+<section class="category" data-category="data">
+<h2>Data Science &amp; BI</h2>
+<div class="grid">
+  <article class="course"><h3>Data Science with R Programming</h3><p class="duration">12 Weeks</p></article>
+  <article class="course"><h3>Apache Kafka</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>Apache Spark and Scala</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>Power BI Certification</h3><p class="duration">16 Hours</p></article>
+  <article class="course"><h3>Data Science Certification</h3><p class="duration">40 Hours</p></article>
+</div>
+</section>
 
-    <section class="note" id="how">
-      <div class="container note-inner">
-        <div class="eyebrow">Your Study Journey</div>
-        <h2>Not Sure Which Course Is Right for You?</h2>
-        <p>Tell us your education background, preferred destination and career goals. Global Study can help you explore relevant options and understand institution-specific requirements.</p>
-        <a class="btn" href="#contact">Discuss Your Options</a>
-      </div>
-    </section>
+</main>
 
-    <section class="cta" id="contact">
-      <div class="container">
-        <h2>Ready to Explore Your Options?</h2>
-        <p>Contact Global Study to begin planning your study journey.</p>
-        <a class="btn" href="index.html#contact">Contact Global Study →</a>
-      </div>
-    </section>
-  </main>
+<footer>
+  <p>&copy; 2026 Global Study. All rights reserved.</p>
+</footer>
 
-  <footer>
-    <div class="container footer-row">
-      <p>© <span id="year"></span> Global Study. All rights reserved.</p>
-      <a href="index.html">Back to Home</a>
-    </div>
-  </footer>
+<script>
+const buttons = document.querySelectorAll(".filters button");
+const categories = document.querySelectorAll(".category");
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
 
-    const filterButtons = document.querySelectorAll(".filter");
-    const courseCards = document.querySelectorAll(".card");
+    buttons.forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
 
-    filterButtons.forEach(function(button) {
-      button.addEventListener("click", function() {
-        const filter = button.dataset.filter;
-
-        filterButtons.forEach(function(item) {
-          item.classList.remove("active");
-        });
-        button.classList.add("active");
-
-        courseCards.forEach(function(card) {
-          const show = filter === "all" || card.dataset.category === filter;
-          card.classList.toggle("hidden", !show);
-        });
-      });
+    categories.forEach(category => {
+      category.hidden =
+        filter !== "all" && category.dataset.category !== filter;
     });
-  </script>
+  });
+});
+</script>
+
 </body>
 </html>
